@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_25"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1024" Width="800" Background="DarkGray"
+        Title="    Logik 25   " Height="1024" Width="800" Background="DarkGray"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         >
@@ -59,7 +59,7 @@
                         Click="Button_Start"
                         
                         >
-                    <DynamicResource ResourceKey="d-rot"/>
+                    <!--<DynamicResource ResourceKey="d-rot"/>-->
                     
                 </Button>
 
@@ -122,39 +122,39 @@
             <StackPanel Height="50" ></StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_1" Content="1" Click="Btn_Click" />
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_2" Content="2" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_3" Content="3" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_4" Content="4" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_5" Content="5" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_1"  Click="Btn_Click" />
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_2"  Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_3"  Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_4"  Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_5"  Click="Btn_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_6" Content="6" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_7" Content="7" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_8" Content="8" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_9" Content="9" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_10" Content="10" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_6"  Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_7"  Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_8"  Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_9"  Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_10" Click="Btn_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_11" Content="11" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_12" Content="12" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_13" Content="13" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_14" Content="14" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_15" Content="15" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_11" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_12" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_13" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_14" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_15" Click="Btn_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_16" Content="16" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_17" Content="17" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_18" Content="18" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_19" Content="19" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_20" Content="20" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_16" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_17" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_18" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_19" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_20" Click="Btn_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_21" Content="21" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_22" Content="22" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_23" Content="23" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_24" Content="24" Click="Btn_Click"/>
-                <Button   Style="{StaticResource btn_1}" x:Name="btn_25" Content="25" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_21" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_22" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_23" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_24" Click="Btn_Click"/>
+                <Button   Style="{StaticResource btn_1}" x:Name="btn_25" Click="Btn_Click"/>
             </StackPanel>
 
 

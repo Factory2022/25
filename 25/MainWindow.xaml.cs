@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Drawing;
+
+
 
 namespace _25
 {
@@ -30,6 +33,9 @@ namespace _25
         public SolidColorBrush rot      = new SolidColorBrush(Colors.Red);
         public SolidColorBrush schwarz  = new SolidColorBrush(Colors.Black);
 
+        public BitmapImage an = new BitmapImage(new Uri(@"E:\VisualStudio\C#\25\25\rotLeuchtend.png"));
+        
+
         public bool imSpiel = false;
         public Random random = new Random();
 
@@ -45,6 +51,7 @@ namespace _25
             LabelZuweisen();
             ZustandSetzten();
             Laden();
+            FelderAnzeigen();
             MiniAnischtZuweisen();
             MiniAnsicht();
         }
@@ -103,8 +110,9 @@ namespace _25
         {
             for (int i = 1; i < 26; i++)
             {
-                if (zustand[i] == 1) tasten[i].Background = rot;
-                else tasten[i].Background = schwarz;
+                
+                if (zustand[i] == 1)    tasten[i].Content = new Image { Source = new BitmapImage(new Uri("/rotLeuchtend.png", UriKind.Relative)), };
+                else                    tasten[i].Content = new Image { Source = new BitmapImage(new Uri("/d-rot.png", UriKind.Relative)), };
             }
         }
 
@@ -112,6 +120,7 @@ namespace _25
         {
             bild = random.Next(0, maxBilder+1);
             MiniAnsicht();
+            ZustandSetzten();
             return;
 
             for (int i = 1; i < 26; i++)
@@ -253,81 +262,54 @@ namespace _25
             }
         }
 
+        public void Umschalten(int wert)
+        {
+            zustand[wert] = zustand[wert] * -1;
+            if (zustand[wert] == 1) tasten[wert].Content = new Image { Source = new BitmapImage(new Uri("/rotLeuchtend.png", UriKind.Relative)), };
+            else                    tasten[wert].Content = new Image { Source = new BitmapImage(new Uri("/d-rot.png"  , UriKind.Relative)), };
+        }
         public void Ecke(int taste1, int taste2, int taste3, int taste4)
         {
-            zustand[taste1] = zustand[taste1] * -1;
-            if (zustand[taste1] == 1) tasten[taste1].Background = rot;
-            else tasten[taste1].Background = schwarz;
-
-            zustand[taste2] = zustand[taste2] * -1;
-            if (zustand[taste2] == 1) tasten[taste2].Background = rot;
-            else tasten[taste2].Background = schwarz;
-
-            zustand[taste3] = zustand[taste3] * -1;
-            if (zustand[taste3] == 1) tasten[taste3].Background = rot;
-            else tasten[taste3].Background = schwarz;
-
-            zustand[taste4] = zustand[taste4] * -1;
-            if (zustand[taste4] == 1) tasten[taste4].Background = rot;
-            else tasten[taste4].Background = schwarz;
+            Umschalten(taste1);
+            Umschalten(taste2);
+            Umschalten(taste3);
+            Umschalten(taste4);
         }
 
         public void Dreier(int taste1, int taste2, int taste3)
         {
-            zustand[taste1] = zustand[taste1] * -1;
-            if (zustand[taste1] == 1) tasten[taste1].Background = rot;
-            else tasten[taste1].Background = schwarz;
-
-            zustand[taste2] = zustand[taste2] * -1;
-            if (zustand[taste2] == 1) tasten[taste2].Background = rot;
-            else tasten[taste2].Background = schwarz;
-
-            zustand[taste3] = zustand[taste3] * -1;
-            if (zustand[taste3] == 1) tasten[taste3].Background = rot;
-            else tasten[taste3].Background = schwarz;
-
-            
+            Umschalten(taste1);
+            Umschalten(taste2);
+            Umschalten(taste3);
         }
 
-        private void Button_Start(object sender, RoutedEventArgs e)
+        
+
+        public void Fuenf(int taste1, int taste2, int taste3, int taste4, int taste5)
         {
-            
+            Umschalten(taste1);
+            Umschalten(taste2);
+            Umschalten(taste3);
+            Umschalten(taste4);
+            Umschalten(taste5);
+        }
+      
+        
+        private void Button_Start(object sender, RoutedEventArgs e)    // nur ein Test...
+        {
+
 
             if (startbutton.Content == FindResource("d-rot"))
             {
                 startbutton.Content = FindResource("rotAn");
-              
+
             }
             else
             {
                 startbutton.Content = FindResource("d-rot");
-              
+
             }
         }
-
-        public void Fuenf(int taste1, int taste2, int taste3, int taste4, int taste5)
-        {
-            zustand[taste1] = zustand[taste1] * -1;
-            if (zustand[taste1] == 1) tasten[taste1].Background = rot;
-            else tasten[taste1].Background = schwarz;
-
-            zustand[taste2] = zustand[taste2] * -1;
-            if (zustand[taste2] == 1) tasten[taste2].Background = rot;
-            else tasten[taste2].Background = schwarz;
-
-            zustand[taste3] = zustand[taste3] * -1;
-            if (zustand[taste3] == 1) tasten[taste3].Background = rot;
-            else tasten[taste3].Background = schwarz;
-
-            zustand[taste4] = zustand[taste4] * -1;
-            if (zustand[taste4] == 1) tasten[taste4].Background = rot;
-            else tasten[taste4].Background = schwarz;
-
-            zustand[taste5] = zustand[taste5] * -1;
-            if (zustand[taste5] == 1) tasten[taste5].Background = rot;
-            else tasten[taste5].Background = schwarz;
-        }
-
         public void Laden()
         {
             StreamReader sr = new StreamReader("bilder.txt");
