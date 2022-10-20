@@ -32,6 +32,7 @@ namespace _25
         public int bild = 0, maxBilder = 0;                             // welche Vorlöage wir verwendet.
         public SolidColorBrush rot      = new SolidColorBrush(Colors.Red);
         public SolidColorBrush schwarz  = new SolidColorBrush(Colors.Black);
+        public int versuche=0;
 
         public BitmapImage an = new BitmapImage(new Uri(@"E:\VisualStudio\C#\25\25\rotLeuchtend.png"));
         
@@ -54,6 +55,8 @@ namespace _25
             FelderAnzeigen();
             MiniAnischtZuweisen();
             MiniAnsicht();
+            ZufallSetzen();
+            versuchNr.Content = Convert.ToString(versuche) + " Spielzüge.";
         }
 
         public void LabelZuweisen()         // Alle Buttons in ein Label-Array einfügen
@@ -96,7 +99,7 @@ namespace _25
             }
             if (vergleich == 25)
             {
-                MessageBox.Show("GEWONNEN!");
+                MessageBox.Show("Gewonnen mit "+ Convert.ToString(versuche) + " Spielzügen!");
                 ZufallSetzen();
                 ZustandSetzten();
                 FelderAnzeigen();
@@ -118,19 +121,13 @@ namespace _25
 
         public void ZufallSetzen()
         {
+            versuche = 0;   // Zähler wieder auf 0!
+            versuchNr.Content = Convert.ToString(versuche) + " Spielzüge.";
+
             bild = random.Next(0, maxBilder+1);
             MiniAnsicht();
             ZustandSetzten();
-            return;
-
-            for (int i = 1; i < 26; i++)
-            {
-                int rnd = random.Next(2);
-                if (rnd == 0) rnd = -1;
-                zustand[i] =rnd;
-                //MessageBox.Show(Convert.ToString(rnd));
-                
-            }
+           
         }
 
         private void Click_Leer(object sender, RoutedEventArgs e)  // Feld wieder leeren;
@@ -158,7 +155,8 @@ namespace _25
                 if (sender == tasten[i]) gedrueckteTaste=i;
             }
             //MessageBox.Show("Taste " + Convert.ToString(gedrueckteTaste) + " wurde gedrückt!");
-            
+            versuche++;
+            versuchNr.Content = Convert.ToString(versuche)+" Spielzüge.";
             Logik();
             Vergleich();
         }
@@ -295,21 +293,8 @@ namespace _25
         }
       
         
-        private void Button_Start(object sender, RoutedEventArgs e)    // nur ein Test...
-        {
-
-
-            if (startbutton.Content == FindResource("d-rot"))
-            {
-                startbutton.Content = FindResource("rotAn");
-
-            }
-            else
-            {
-                startbutton.Content = FindResource("d-rot");
-
-            }
-        }
+        
+        
         public void Laden()
         {
             StreamReader sr = new StreamReader("bilder.txt");

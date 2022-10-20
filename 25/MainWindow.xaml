@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_25"
         mc:Ignorable="d"
-        Title="    Logik 25   " Height="1024" Width="800" Background="DarkGray"
+        Title="    Logik 25   " Height="1024" Width="820" Background="DarkGray"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         >
@@ -47,40 +47,31 @@
         
         <LinearGradientBrush x:Key="Verlauf1" >
             <GradientStop  Offset="0" Color="LightBlue"/>
-            <GradientStop  Offset="1" Color="Black" />
+            <GradientStop  Offset="0.6" Color="Black" />
         </LinearGradientBrush>
         
     </Window.Resources>
     <Grid Background="{StaticResource Verlauf1}">
         <StackPanel Orientation="Vertical" Margin="20">
             <StackPanel Orientation="Horizontal">
-                <Button Style="{StaticResource btn_2}"
-                        x:Name="startbutton"
-                        Click="Button_Start"
-                        
-                        >
-                    <!--<DynamicResource ResourceKey="d-rot"/>-->
-                    
-                </Button>
+                
 
                 <Button Style="{StaticResource btn_2}"
                         Click="Click_Zufall"
-                        Content="Zufall"
+                        Content="Neu"
                         Background="LightBlue"
+                        Foreground="Black"
                         >
                 </Button>
                 <Button Style="{StaticResource btn_2}"
                         Click="Click_Leer"
                         Background="LightBlue"
-                        Content="leer"
+                        Content="leeren"
+                        Foreground="Black"
                         >
                 </Button>
-                <Button Style="{StaticResource btn_2}"
-                        Content="Reset"
-                        Background="IndianRed"
-                        >
-                </Button>
-                <Label Width="155"/>
+                
+                <Label Width="400" />
                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                     <Label Style="{StaticResource lbl1}" x:Name="klein1" />
                     <Label Style="{StaticResource lbl1}" x:Name="klein6" />
@@ -119,7 +110,18 @@
 
             </StackPanel>
             
-            <StackPanel Height="50" ></StackPanel>
+            <StackPanel Height="50" >
+                <Label 
+                    Height="40" 
+                    HorizontalContentAlignment="Center" 
+                    VerticalContentAlignment="Top"
+                    x:Name="versuchNr"
+                    FontSize="23"
+                    FontWeight="SemiBold"
+                    >
+                    Hallo  Welt!
+                </Label>
+            </StackPanel>
 
             <StackPanel Orientation="Horizontal">
                 <Button   Style="{StaticResource btn_1}" x:Name="btn_1"  Click="Btn_Click" />
