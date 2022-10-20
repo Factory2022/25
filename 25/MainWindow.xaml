@@ -10,8 +10,8 @@
         WindowStartupLocation="CenterScreen"
         >
     <Window.Resources>
-        <Image x:Key="rotAn" Source="/rotLeuchtend.png"/>
-        <Image x:Key="d-rot" Source="/d-rot.png"/>
+        <Image x:Key="rotAn" Source="/d-rot.png"/>
+        <Image x:Key="d-rot" Source="/rotLeuchtend.png"/>
         
         
         <Style TargetType="Label" x:Key="lbl1">
@@ -56,8 +56,8 @@
             <StackPanel Orientation="Horizontal">
                 <Button Style="{StaticResource btn_2}"
                         x:Name="startbutton"
+                        Click="Button_Start"
                         
-                        Click="Button_Click"
                         >
                     <DynamicResource ResourceKey="d-rot"/>
                     

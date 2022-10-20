@@ -42,7 +42,7 @@ namespace _25
         public MainWindow()
         {
             InitializeComponent();
-            
+            LabelZuweisen();
             ZustandSetzten();
             Laden();
             MiniAnischtZuweisen();
@@ -149,6 +149,7 @@ namespace _25
                 if (sender == tasten[i]) gedrueckteTaste=i;
             }
             //MessageBox.Show("Taste " + Convert.ToString(gedrueckteTaste) + " wurde gedrückt!");
+            
             Logik();
             Vergleich();
         }
@@ -288,7 +289,7 @@ namespace _25
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Start(object sender, RoutedEventArgs e)
         {
             
 

@@ -100,5 +100,8 @@
   <ItemGroup>
     <Resource Include="rotLeuchtend.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rot-neu.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
