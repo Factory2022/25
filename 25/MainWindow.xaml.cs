@@ -34,8 +34,10 @@ namespace _25
         public SolidColorBrush schwarz  = new SolidColorBrush(Colors.Black);
         public int versuche=0;
 
-        public BitmapImage an = new BitmapImage(new Uri(@"E:\VisualStudio\C#\25\25\rotLeuchtend.png"));
         
+        public Image[] feldEin = new Image[26];
+        public Image[] feldAus = new Image[26];
+
 
         public bool imSpiel = false;
         public Random random = new Random();
@@ -50,6 +52,11 @@ namespace _25
         {
             InitializeComponent();
             LabelZuweisen();
+            for (int i = 1; i < 26; i++)
+            {
+                feldEin[i] = new Image { Source = new BitmapImage(new Uri("/rotLeuchtend.png", UriKind.Relative)) };
+                feldAus[i] = new Image { Source = new BitmapImage(new Uri("/d-rot.png", UriKind.Relative)) };
+            }
             ZustandSetzten();
             Laden();
             FelderAnzeigen();
@@ -109,13 +116,12 @@ namespace _25
         {
             for (int i = 1; i < 26; i++) zustand[i] = -1;
         }
-        public void FelderAnzeigen()                                // Anzeige wied aktualisiert
+        public void FelderAnzeigen()                                    // Anzeige wied aktualisiert
         {
             for (int i = 1; i < 26; i++)
             {
-                
-                if (zustand[i] == 1)    tasten[i].Content = new Image { Source = new BitmapImage(new Uri("/rotLeuchtend.png", UriKind.Relative)), };
-                else                    tasten[i].Content = new Image { Source = new BitmapImage(new Uri("/d-rot.png", UriKind.Relative)), };
+                if (zustand[i] == 1) tasten[i].Content = feldEin[i];    //  new Image { Source = new BitmapImage(new Uri("/rotLeuchtend.png", UriKind.Relative)), };
+                else tasten[i].Content = feldAus[i];                    // new Image { Source = new BitmapImage(new Uri("/d-rot.png", UriKind.Relative)), };
             }
         }
 
@@ -127,7 +133,7 @@ namespace _25
             bild = random.Next(0, maxBilder+1);
             MiniAnsicht();
             ZustandSetzten();
-           
+                       
         }
 
         private void Click_Leer(object sender, RoutedEventArgs e)  // Feld wieder leeren;
@@ -263,8 +269,8 @@ namespace _25
         public void Umschalten(int wert)
         {
             zustand[wert] = zustand[wert] * -1;
-            if (zustand[wert] == 1) tasten[wert].Content = new Image { Source = new BitmapImage(new Uri("/rotLeuchtend.png", UriKind.Relative)), };
-            else                    tasten[wert].Content = new Image { Source = new BitmapImage(new Uri("/d-rot.png"  , UriKind.Relative)), };
+            if (zustand[wert] == 1) tasten[wert].Content = feldEin[wert]; // new Image { Source = new BitmapImage(new Uri("/rotLeuchtend.png", UriKind.Relative)), };
+            else tasten[wert].Content = feldAus[wert];// new Image { Source = new BitmapImage(new Uri("/d-rot.png"  , UriKind.Relative)), };
         }
         public void Ecke(int taste1, int taste2, int taste3, int taste4)
         {
